@@ -1,11 +1,11 @@
 ```mermaid
 flowchart TD
     Start[User Edits Snippet] --> Submit[Submit Update Form]
-    Submit --> API[PUT /api/snippets/{id}]
+    Submit --> API["PUT /api/snippets/{id}"]
     
     API --> CheckVersions{Count Snippet Versions}
-    CheckVersions --> LessThan10[Count < 10]
-    CheckVersions --> AtLeast10[Count >= 10]
+    CheckVersions --> LessThan10["Count < 10"]
+    CheckVersions --> AtLeast10["Count >= 10"]
     
     LessThan10 --> SaveVersion[Save current state as new Version]
     AtLeast10 --> DeleteOldest[Delete oldest Version]
